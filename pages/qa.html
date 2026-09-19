@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你问我答 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <div class="field-row">
+      <select id="qGrade" aria-label="年级">
+        <option value="丘班">丘班</option>
+        <option value="高一">高一</option>
+        <option value="高二">高二</option>
+        <option value="高三">高三</option>
+      </select>
+      <select id="qType" aria-label="问题类型">
+        <option value="teach">教学类问题</option>
+        <option value="life">非教学类问题</option>
+      </select>
+      <span id="subWrap"><select id="qSubject" aria-label="学科"></select></span>
+    </div>
+    <input type="text" id="qTitle" maxlength="60" placeholder="问题标题">
+    <textarea id="qInput" rows="3" maxlength="800" placeholder="问题描述…（所有人可回答，非学生回复将置顶）"></textarea>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">我要提问</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="gradeTabs"></div>
+  <div class="filter-bar" id="sortBar">
+    <button type="button" class="fbtn on" data-sort="new">最新</button>
+    <button type="button" class="fbtn" data-sort="hot">最热</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/qa.js"></script>
+</body>
+</html>

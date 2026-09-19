@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我想吐槽 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <select id="rantCat" aria-label="问题分类">
+      <option value="canteen">食堂餐饮</option>
+      <option value="dorm">宿舍住宿</option>
+      <option value="teach">教学学习</option>
+      <option value="safety">校园安全</option>
+      <option value="logistics">后勤设施</option>
+      <option value="other">其他</option>
+    </select>
+    <input type="text" id="rantTitle" maxlength="60" placeholder="问题标题（一句话概括）">
+    <textarea id="rantInput" rows="3" maxlength="800" placeholder="具体描述你遇到的问题…"></textarea>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">提交吐槽</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="catTabs"></div>
+  <div class="filter-bar" id="sortBar">
+    <button type="button" class="fbtn on" data-sort="new">最新</button>
+    <button type="button" class="fbtn" data-sort="hot">最热</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/rant.js"></script>
+</body>
+</html>

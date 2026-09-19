@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>表白墙 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <textarea id="wallInput" rows="3" maxlength="500" placeholder="匿名表白/留言写在这里…"></textarea>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">发布</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="sortBar">
+    <button type="button" class="fbtn on" data-sort="new">最新</button>
+    <button type="button" class="fbtn" data-sort="hot">最热</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/wall.js"></script>
+</body>
+</html>

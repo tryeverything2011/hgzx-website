@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>校园大事件 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <input type="text" id="evTitle" maxlength="60" placeholder="话题标题">
+    <textarea id="evInput" rows="3" maxlength="800" placeholder="话题内容…"></textarea>
+    <div class="file-row">
+      <label class="btn btn-ghost file-btn">＋ 配图<input type="file" id="evFile" accept="image/*" hidden></label>
+      <span class="img-pre" id="evImgPre"></span>
+    </div>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">发布话题</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="sortBar">
+    <button type="button" class="fbtn on" data-sort="new">最新</button>
+    <button type="button" class="fbtn" data-sort="hot">最热</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/event.js"></script>
+</body>
+</html>

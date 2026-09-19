@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习资料上传 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <div class="field-row">
+      <select id="mGrade" aria-label="年级"></select>
+      <select id="mSubject" aria-label="学科"></select>
+    </div>
+    <input type="text" id="mTitle" maxlength="60" placeholder="资料标题">
+    <textarea id="mInput" rows="2" maxlength="500" placeholder="资料说明（无附件时将以此生成可下载文本）…"></textarea>
+    <div class="file-row">
+      <label class="btn btn-ghost file-btn">📎 附件（≤200KB）<input type="file" id="mFile" hidden></label>
+      <span class="img-pre" id="mFilePre"></span>
+    </div>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">上传资料</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="gradeTabs"></div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/material.js"></script>
+</body>
+</html>

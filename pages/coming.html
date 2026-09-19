@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模块建设中 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="coming">
+  <div class="card coming-card">
+    <div class="coming-icon" id="cIcon">🚧</div>
+    <h1 id="cName">功能模块</h1>
+    <p id="cDesc">该模块正在开发中，当前为统一占位页；正式功能将在后续版本上线。</p>
+    <a class="btn btn-primary" href="../index.html">返回首页</a>
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script>
+/* 占位页逻辑：依据 ?m=模块key 显示对应模块名称与说明 */
+(function () {
+  Common.nav();
+  Common.footer();
+  var m = Common.getModule(Common.q('m'));
+  if (m) {
+    document.getElementById('cIcon').textContent = m.icon;
+    document.getElementById('cName').textContent = m.name + ' · 建设中';
+    document.getElementById('cDesc').textContent = m.desc + '。该模块正在开发中，当前为统一占位页，正式功能将在后续版本上线。';
+    document.title = m.name + ' — 黄冈中学校园网';
+  }
+})();
+</script>
+</body>
+</html>

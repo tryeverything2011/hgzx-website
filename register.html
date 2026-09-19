@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>注册 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="auth-wrap">
+  <form class="card auth-card" id="regForm" novalidate>
+    <h1>注册账户</h1>
+    <p class="auth-sub">选择角色后将展开对应资料填写；带 * 为必填项。</p>
+    <div class="msg" id="msg"></div>
+
+    <fieldset>
+      <legend>① 选择角色</legend>
+      <div class="role-cards">
+        <input type="radio" name="role" id="rStudent" value="student">
+        <label for="rStudent"><span class="i">🎒</span>学生</label>
+        <input type="radio" name="role" id="rTeacher" value="teacher">
+        <label for="rTeacher"><span class="i">📖</span>老师</label>
+        <input type="radio" name="role" id="rLeader" value="leader">
+        <label for="rLeader"><span class="i">🏛️</span>领导</label>
+        <input type="radio" name="role" id="rUnion" value="union">
+        <label for="rUnion"><span class="i">🎓</span>学生会</label>
+        <input type="radio" name="role" id="rAdmin" value="admin">
+        <label for="rAdmin"><span class="i">🛡️</span>管理员</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>② 公共信息（所有角色均需填写）</legend>
+      <div class="form-grid-2">
+        <div class="form-item">
+          <label>姓名<span class="req">*</span></label>
+          <input type="text" id="name" maxlength="20" placeholder="真实姓名">
+        </div>
+        <div class="form-item">
+          <label>性别<span class="req">*</span></label>
+          <select id="gender">
+            <option value="">请选择</option>
+            <option value="男">男</option>
+            <option value="女">女</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label>QQ号<span class="req">*</span></label>
+          <input type="text" id="qq" maxlength="11" placeholder="5-11位数字">
+        </div>
+        <div class="form-item">
+          <label>昵称<span class="req">*</span></label>
+          <input type="text" id="nickname" maxlength="20" placeholder="站内展示的昵称">
+          <small>昵称即登录凭证，全站唯一；注册后凭「昵称 + 密码」登录。</small>
+        </div>
+      </div>
+
+      <div class="form-item">
+        <label>头像（选填，上传后自动压缩为小图预览）</label>
+        <div class="avatar-row">
+          <div class="avatar-preview" id="avatarPreview">👤</div>
+          <input type="file" id="avatar" accept="image/*">
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-item">
+          <label>账户密码<span class="req">*</span></label>
+          <input type="password" id="pass" maxlength="32" placeholder="至少6位">
+          <small>密码仅保存哈希值，不会明文存储。</small>
+        </div>
+        <div class="form-item">
+          <small style="align-self:end;line-height:1.7;color:#8a94a6">🔑 v1.5 起使用 <b>昵称 + 密码</b> 登录，不再需要身份证号；昵称全站唯一，请牢记。</small>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>③ 角色资料（随所选角色变化）</legend>
+
+      <div class="role-block" data-role="student">
+        <div class="form-grid-2">
+          <div class="form-item">
+            <label>学号<span class="req">*</span></label>
+            <input type="text" id="studentNo" maxlength="20" placeholder="如：20250318">
+          </div>
+          <div class="form-item">
+            <label>班级<span class="req">*</span></label>
+            <input type="text" id="classNameStu" maxlength="20" placeholder="如：高一（3）班">
+          </div>
+          <div class="form-item">
+            <label>哪一届<span class="req">*</span></label>
+            <input type="text" id="cohort" maxlength="10" placeholder="如：2028届">
+          </div>
+        </div>
+      </div>
+
+      <div class="role-block" data-role="teacher">
+        <div class="form-grid-2">
+          <div class="form-item">
+            <label>学科部门<span class="req">*</span></label>
+            <input type="text" id="subjectDept" maxlength="20" placeholder="如：教学处 / 年级组">
+          </div>
+          <div class="form-item">
+            <label>办公学科<span class="req">*</span></label>
+            <input type="text" id="officeSubject" maxlength="20" placeholder="如：数学">
+          </div>
+        </div>
+      </div>
+
+      <div class="role-block" data-role="leader">
+        <div class="form-grid-2">
+          <div class="form-item">
+            <label>分管年级<span class="req">*</span></label>
+            <select id="managedGrade">
+              <option value="">请选择</option>
+              <option>高一</option>
+              <option>高二</option>
+              <option>高三</option>
+              <option>全校</option>
+            </select>
+          </div>
+          <div class="form-item">
+            <label>部门<span class="req">*</span></label>
+            <input type="text" id="dept" maxlength="20" placeholder="如：校务办公室">
+          </div>
+        </div>
+      </div>
+
+      <div class="role-block" data-role="union">
+        <div class="form-grid-2">
+          <div class="form-item">
+            <label>申请码<span class="req">*</span></label>
+            <input type="password" id="uniCode" placeholder="请输入学生会申请码">
+            <small>申请码由管理员线下提供，输入框不显示明文。</small>
+          </div>
+          <div class="form-item">
+            <label>班级<span class="req">*</span></label>
+            <input type="text" id="classNameUni" maxlength="20" placeholder="如：高二（5）班">
+          </div>
+        </div>
+      </div>
+
+      <div class="role-block" data-role="admin">
+        <div class="form-item">
+          <label>申请码<span class="req">*</span></label>
+          <input type="password" id="admCode" placeholder="请输入管理员申请码">
+          <small>申请码由站长线下提供，输入框不显示明文。</small>
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary btn-block">注 册</button>
+    <p class="auth-tip">已有账户？<a href="login.html">去登录</a> · <a href="index.html">返回首页</a></p>
+  </form>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/permission.js"></script>
+<script src="js/civility.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/common.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

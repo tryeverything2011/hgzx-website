@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>生活分享 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <section class="composer card" id="composer" hidden>
+    <div class="field-row">
+      <select id="visMode" aria-label="可见权限">
+        <option value="public">🌐 所有人可见</option>
+        <option value="grade">🎓 仅指定年级可见</option>
+        <option value="role">👤 仅指定角色可见</option>
+        <option value="self">🔒 仅自己可见</option>
+      </select>
+      <span id="visScopeWrap"><select id="visScope" aria-label="可见范围对象"></select></span>
+    </div>
+    <input type="text" id="lifeTitle" maxlength="60" placeholder="标题（可选）">
+    <textarea id="lifeInput" rows="3" maxlength="800" placeholder="分享你的校园日常…"></textarea>
+    <div class="composer-foot">
+      <span></span>
+      <button type="button" class="btn btn-primary" id="btnPost">发布</button>
+    </div>
+  </section>
+  <p class="composer-tip" id="composerTip"></p>
+
+  <div class="filter-bar" id="sortBar">
+    <button type="button" class="fbtn on" data-sort="new">最新</button>
+    <button type="button" class="fbtn" data-sort="hot">最热</button>
+  </div>
+
+  <div id="list"></div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/life.js"></script>
+</body>
+</html>

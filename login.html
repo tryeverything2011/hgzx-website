@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登录 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="auth-wrap">
+  <form class="card auth-card" id="loginForm" novalidate style="max-width:420px">
+    <h1>登录</h1>
+    <p class="auth-sub">使用昵称 + 密码登录；管理员账户需另填申请码。</p>
+    <div class="msg" id="msg"></div>
+
+    <div class="form-item">
+      <label>昵称<span class="req">*</span></label>
+      <input type="text" id="nickname" maxlength="20" placeholder="注册时填写的昵称" autocomplete="username">
+    </div>
+
+    <div class="form-item">
+      <label>密码<span class="req">*</span></label>
+      <input type="password" id="pass" maxlength="32" placeholder="账户密码">
+    </div>
+
+    <div class="form-item">
+      <label>申请码（仅管理员需要）</label>
+      <input type="password" id="code" placeholder="管理员登录专用，其他角色留空即可">
+      <small>申请码线下分发，输入框不显示明文；输入后即刻参与校验。</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">登 录</button>
+    <p class="auth-tip">还没有账户？<a href="register.html">去注册</a> · <a href="index.html">返回首页</a></p>
+  </form>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/permission.js"></script>
+<script src="js/civility.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

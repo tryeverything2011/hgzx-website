@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闲聊吧 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card" id="moduleHead"></div>
+
+  <!-- 微信群聊式双栏：左侧分区会话列表 + 右侧聊天窗口（移动端上下折叠） -->
+  <div class="wx" id="wxApp">
+    <aside class="wx-side" id="zoneList" aria-label="分区会话列表"></aside>
+
+    <section class="wx-main">
+      <header class="wx-head">
+        <span class="wx-title" id="wxZoneName">总群</span>
+        <span class="wx-sub" id="wxZoneSub"></span>
+        <span class="wx-search">
+          <input type="text" id="wxKw" maxlength="30" placeholder="🔍 搜索聊天记录">
+          <button type="button" class="btn" id="btnSearch">搜索</button>
+          <button type="button" class="btn" id="btnSearchExit" hidden>退出搜索</button>
+          <span class="s-count" id="searchCount"></span>
+        </span>
+      </header>
+
+      <div class="wx-msgs" id="wxMsgs"></div>
+
+      <div class="wx-input" id="wxComposer">
+        <textarea id="chatInput" rows="2" maxlength="500"
+          placeholder="在当前分区说点什么…（发言所有人可见）"></textarea>
+        <div class="wx-foot composer-foot">
+          <span class="wx-hint">支持表情 / 图片（自动压缩≤300KB）/ 附件（≤1MB）· 内容先经文明检测</span>
+          <button type="button" class="btn btn-primary" id="btnSend">发送</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../config.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/permission.js"></script>
+<script src="../js/civility.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/seed.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/chatui.js"></script>
+<script src="../js/postui.js"></script>
+<script src="../js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>管理后台 · 权限中心 — 黄冈中学校园网</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-nav" id="siteNav"></header>
+
+<main class="wrap module-page">
+  <div class="module-head card">
+    <span class="mh-icon">🛠</span>
+    <div>
+      <h1>管理后台 · 权限中心</h1>
+      <p>账户权限管理 / 上报处理 / 警告记录 — 仅管理员可见可操作</p>
+    </div>
+  </div>
+
+  <!-- 存储模式与云端状态（本地回退模式会注明「演示数据存本地浏览器」） -->
+  <div class="card cloud-card" id="cloudStatus"></div>
+
+  <div class="filter-bar" id="adminTabs"></div>
+
+  <!-- ① 账户权限 -->
+  <section id="panelAcc">
+    <div class="stat-row" id="statChips"></div>
+    <div class="adm-tools">
+      <input type="text" id="userSearch" placeholder="🔍 搜索姓名 / 昵称 / QQ号 / 学号 / 班级…">
+    </div>
+    <div class="table-wrap">
+      <table class="adm-table">
+        <thead>
+          <tr>
+            <th>账户</th><th>角色</th><th>性别</th><th>QQ号</th><th>学号</th>
+            <th>班级 / 届</th><th>关键信息</th><th>昵称（登录用）</th><th>状态</th><th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="userRows"></tbody>
+      </table>
+    </div>
+    <p class="adm-note">说明：不能修改自己的角色或封禁自己（防自锁）；被封禁账户无法登录，已登录设备会被强制下线；昵称为全站唯一登录凭证（v1.5 起凭「昵称 + 密码」登录）；调整角色后对应权限即时生效并站内提醒对方。</p>
+  </section>
+
+  <!-- ② 上报处理 -->
+  <section id="panelRep" hidden>
+    <p class="adm-note" style="margin-bottom:10px">处理入口：文明检测命中 / 帖子与消息上报 / 账户上报。可公示为通报（同步到「网站违规通报」模块，全员可见）、警告当事人、封禁当事人或忽略。</p>
+    <div id="repList"></div>
+  </section>
+
+  <!-- ③ 警告记录 -->
+  <section id="panelWarn" hidden>
+    <div id="warnList"></div>
+  </section>
+
+  <!-- 无权访问占位 -->
+  <section id="denyPanel" hidden>
+    <div class="card coming-card" style="text-align:center;padding:40px 20px">
+      <h1>⛔ 无权访问</h1>
+      <p>管理后台仅对管理员开放。如需权限，请联系学校网络管理员。</p>
+      <a class="btn btn-ghost" href="index.html">返回首页</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="config.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/permission.js"></script>
+<script src="js/civility.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/common.js"></script>
+<script src="js/moderate.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
